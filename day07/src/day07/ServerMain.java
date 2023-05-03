@@ -38,6 +38,8 @@ public class ServerMain {
                 System.exit(0);
             }
 
+            Thread.sleep(30 * 1000);
+
             /* 
             int size = 0;
             byte[] buffer = new byte[1024];
@@ -50,7 +52,6 @@ public class ServerMain {
             System.out.printf("Closing connection and exit");
             sock.close();
         }
-
     }
 
 }
