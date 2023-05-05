@@ -15,6 +15,12 @@ public class PlaystoreStats {
 
     public PlaystoreStats(String category) { this.category = category; }
 
+	 /*
+	 public static void main(String[] args) {
+		 System.out.println("hello, world");
+	 }
+	 */
+
     public void compute(PlaystoreEntry entry) {
         allRatings.add(entry.rating());
         if (entry.rating() < getLowestRating()) {
