@@ -1,0 +1,31 @@
+.h1-style {
+   color: red;
+   font-size: 3em;
+   background-color: lightgray;
+   text-shadow: 5px 5px 5px grey;
+   padding: 15px;
+}
+
+p {
+   font-family: monospace;
+   font-size: 1.5em;
+   border: 1px dashed black;
+   border-radius: 8px;
+   padding: 10px;
+   margin: 20px;
+}
+
+#special {
+   font-style: italic;
+}
+
+.box-it {
+   border: 1px solid lightgrey;
+   padding: 4px;
+   margin: 5px;
+   border-radius: 5px;
+}
+
+li {
+   display: inline;
+}

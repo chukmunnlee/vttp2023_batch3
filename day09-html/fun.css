@@ -1,0 +1,38 @@
+.menuitem {
+   display: inline;
+   font-size: 2em;
+   padding: 10px;
+   margin: 10px;
+   transition-property: text-shadow;
+   transition-duration: 300ms;
+   transition-timing-function: linear;
+}
+
+.menuitem:hover {
+   text-shadow: 5px 5px 3px grey;
+}
+
+.my-box {
+   width: 10vw;
+   height: 10vh;
+   margin: 20px;
+   transition-property: border-radius border background-color;
+   transition-duration: 500ms;
+   transition-timing-function: liner;
+}
+
+#magic:hover {
+   border-radius: 100px;
+   border: 2px darkred solid;
+   background-color: pink;
+}
+
+.blue {
+   border: 2px darkblue solid;
+   background-color: lightblue;
+}
+
+.red {
+   border: 2px darkred solid;
+   background-color: pink;
+}
