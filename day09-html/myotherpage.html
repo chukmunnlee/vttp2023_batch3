@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>My other document</title>
+   </head>
+   <body>
+
+      <h1>RSVP for this weekend's party</h1>
+
+      <form>
+
+         <table>
+            <tr>
+               <td>
+                  <label for="name">Name</label>
+               </td>
+               <td>
+                  <input type="text" id="name" name="name" size="30" placeholder="Please enter your name">
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <label for="phone">Phone</label>
+               </td>
+               <td>
+                  <input type="tel" id="phone" name="phone" size="30" placeholder="Your contact number">
+               </td>
+            </tr>
+
+            <tr>
+               <td>
+                  <label for="email">Email</label>
+               </td>
+               <td>
+                  <input type="email" name="eamil" id="email" size="30" placeholder="Your email">
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <label for="attending">Attending</label>
+               </td>
+               <td>
+                  Yes <input type="radio" name="attending" id="attending">
+                  No <input type="radio" name="attending" id="attending">
+                  Maybe <input type="radio" name="attending" id="attending" checked>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <label for="diet">Diet</label>
+               </td>
+               <td>
+                  <select name="diet" id="diet">
+                     <option>Vegan</option>
+                     <option selected>Vegetarian</option>
+                     <option>Meat eater</option>
+                  </select>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <label for="allergies">Allergies</label>
+               </td>
+               <td>
+                  Nuts <input type="checkbox" name="nuts" id="allergies">
+                  Diary <input type="checkbox" name="diary" id="allergies">
+                  Seafood <input type="checkbox" name="seafood" id="allergies">
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <label for="comments">Comments</label>
+               </td>
+               <td>
+                  <textarea name="comments" id="comments" cols="30" rows="4"></textarea>
+               </td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>
+                  <button type="submit">Respond</button>
+               </td>
+            </tr>
+
+         </table>
+
+      </form>
+
+      <h3>
+         <a href="/">Back</a>
+      </h3>
+      
+   </body>
+</html>
