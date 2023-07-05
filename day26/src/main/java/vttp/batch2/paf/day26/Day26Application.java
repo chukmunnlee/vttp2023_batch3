@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,6 +17,9 @@ public class Day26Application implements CommandLineRunner {
 	@Autowired
 	private ShowsRepository showRepo;
 
+	@Value("${spring.data.mongodb.uri}")
+	private String mongoURI;
+
 	public static void main(String[] args) {
 		SpringApplication.run(Day26Application.class, args);
 	}
@@ -23,8 +27,12 @@ public class Day26Application implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		/*
-		List<Document> docs = showRepo.findShowsByName("Bitten");
+		System.out.printf(">>>> URI: %s\n", mongoURI);
+
+		for (String r: showRepo.findShowsByGenre("Anime", "Horror"))
+			System.out.printf(">>> %s\n", r);
+
+		/* List<Document> docs = showRepo.findShowsByName("Bitten");
 
 		for (Document d: docs) {
 			String name = d.getString("name");
