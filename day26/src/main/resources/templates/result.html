@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+
+   <h2>Your search for <span data-th-text="${title}"></span></h2>
+
+   <table>
+      <tr>
+         <td>Id</td>
+         <td><span data-th-text="${show.id}"></span></td>
+      </tr>
+      <tr>
+         <td>Name</td>
+         <td><span data-th-text="${show.name}"></span></td>
+      </tr>
+      <tr>
+         <td>Type</td>
+         <td><span data-th-text="${show.type}"></span></td>
+      </tr>
+      <tr>
+         <td>Language</td>
+         <td><span data-th-text="${show.language}"></span></td>
+      </tr>
+      <tr>
+         <td>Runtime</td>
+         <td><span data-th-text="${show.runtime}"></span></td>
+      </tr>
+   </table>
+
+</body>
+</html>
