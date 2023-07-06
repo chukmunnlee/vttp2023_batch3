@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+	</head>
+	<body>
+
+		<h1>Details of Game <span data-th-text="${gid}"></span></h1>
+
+		<table data-th-object="${game}">
+			<tr>
+				<td>Name:</td>
+				<td>
+					<a data-th-href="*{url}" target="_blank">
+						<span data-th-text="*{name}"></span>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td>Published:</td>
+				<td>
+					<span data-th-text="*{year}"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>Published:</td>
+				<td>
+					<img data-th-src="*{image}" alt="">
+				</td>
+			</tr>
+		</table>
+
+		<div data-th-if="${#lists.isEmpty(game.comments)}">
+			<h2>No comments</h2>
+		</div>
+
+		<table data-th-unless="${#lists.isEmpty(game.comments)}">
+			<thead>
+				<tr>
+					<th>User</th>
+					<th>Rating</th>
+					<th>Comment</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr data-th-each="c: ${game.comments}" data-th-object="${c}">
+					<td>
+						<span data-th-text="*{user}"></span>
+					</td>
+					<td>
+						<span data-th-text="*{rating}"></span>
+					</td>
+					<td>
+						<span data-th-text="*{text}"></span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		
+	</body>
+</html>
