@@ -28,7 +28,7 @@ public class Utils {
 
 	public static Comment toComment(Document doc) {
 		return new Comment(
-			doc.getInteger(Constants.A_CID),
+			doc.getString(Constants.A_CID),
 			doc.getString(Constants.A_USER),
 			doc.getInteger(Constants.A_RATING),
 			doc.getString(Constants.A_TEXT),

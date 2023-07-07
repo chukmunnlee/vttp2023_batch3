@@ -12,6 +12,7 @@ public class Constants {
 	public static final String A_USER = "user";
 	public static final String A_RATING = "rating";
 	public static final String A_TEXT = "c_text";
+	public static final String A_ID = "_id";
 
 	public static final String C_GAMES = "games";
 	public static final String C_COMMENTS = "comments";
