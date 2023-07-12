@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+	</head>
+	<body>
+
+		<form action="">
+			<input type="hidden" name="mycart" data-th-value="${mylist}">
+		</form>
+
+		<h1>Dynamically Generated</h1>
+
+		<h2 data-th-text="${message}"></h2>
+
+		<h2>Visited <span data-th-text="${counter}"></span></h2>
+		<h2>Another counter <span data-th-text="${personalCounter}"></span></h2>
+
+		<h3>Dates</h3>
+		<ul>
+			<li data-th-each="d: ${dates}">
+				<h4><code data-th-text="${d}"></code></h4>
+			</li>
+		</ul>
+
+		<form method="GET" action="/logout">
+			<button type="submit">Logout</button>
+		</form>
+		
+	</body>
+</html>
