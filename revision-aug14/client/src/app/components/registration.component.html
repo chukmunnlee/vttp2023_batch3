@@ -1,0 +1,27 @@
+<h1>Registration Form</h1>
+
+<form [formGroup]="regForm" (ngSubmit)="performReg()">
+  <table>
+    <tr>
+      <td>Name:</td>
+      <td>
+        <input type="text" size="30" formControlName="name">
+      </td>
+    </tr>
+    <tr>
+      <td>Email:</td>
+      <td>
+        <input type="email" size="30" formControlName="email">
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <button type="submit" [disabled]="regForm.invalid">
+          Register Me!
+          ({{ regForm.invalid }})
+        </button>
+      </td>
+    </tr>
+  </table>
+</form>
