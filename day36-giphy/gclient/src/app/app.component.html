@@ -1,0 +1,14 @@
+<h1>Giphy Search</h1>
+
+<input type="text" size="30" #q>
+<button type="button" (click)="search()">Search</button>
+
+<div *ngIf="urls.length > 0; else noContent">
+  <div *ngFor="let i of urls">
+    <img src="{{i}}" alt="">
+  </div>
+</div>
+
+<ng-template #noContent>
+  <h2>No Content</h2>
+</ng-template>
