@@ -1,0 +1,66 @@
+<h2>Create New Order</h2>
+
+<form [formGroup]="orderForm" (submit)="submit()">
+  <table>
+    <tr>
+      <td>Name:</td>
+      <td>
+        <input type="text" formControlName="name">
+      </td>
+    </tr>
+    <tr>
+      <td>Email:</td>
+      <td>
+        <input type="email" formControlName="email">
+      </td>
+    </tr>
+    <tr>
+      <td>Express:</td>
+      <td>
+        <input type="checkbox" formControlName="express">
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <button type="submit">Submit</button>
+        <button type="button" (click)="addLineItem()">Add</button>
+      </td>
+    </tr>
+  </table>
+
+  <div *ngIf="lineItemsArray.controls.length > 0; else noItems">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Quantity</th>
+          <th>Unit Price</th>
+        </tr>
+      </thead>
+      <tbody formArrayName="lineItems">
+        <tr *ngFor="let li of lineItemsArray.controls; let idx = index"
+            [formGroupName]="idx">
+          <td>
+            <input type="text" size="20" formControlName="name">
+          </td>
+          <td>
+            <input type="number" min="1" formControlName="quantity">
+          </td>
+          <td>
+            <input type="number" min="1" step="0.05" formControlName="unitPrice">
+          </td>
+          <td>
+            <button type="button" (click)="removeLineItem(idx)">
+              x
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</form>
+
+<ng-template #noItems>
+  <h2>Your order is currently empty</h2>
+</ng-template>
