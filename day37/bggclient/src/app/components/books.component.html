@@ -1,0 +1,19 @@
+<div *ngIf="bkObs$ | async as bks; else loading">
+  <h2 *ngIf="bks.length <= 0">
+    <h2>Strange, no Books Found</h2>
+  </h2>
+  <ul *ngIf="bks.length > 0">
+    <li *ngFor="let b of bks" [routerLink]="['/book', b.bookId]"
+      [queryParams]="{ title: b.title }">
+      <h3>{{ b.title }}</h3>
+    </li>
+  </ul>
+</div>
+
+<ng-template #loading>
+  <h2>Loading</h2>
+</ng-template>
+
+<ng-template #noBooks>
+  <h2>Strange, no Books Found</h2>
+</ng-template>

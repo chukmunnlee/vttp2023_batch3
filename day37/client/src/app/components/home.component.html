@@ -1,0 +1,43 @@
+<form [formGroup]="form" (submit)="perform()">
+  <table>
+    <tr>
+      <td> Customer Id:
+      </td>
+      <td>
+        <input type="text" size="30" placeholder="Customer ID here" formControlName="custId">
+      </td>
+    </tr>
+    <tr>
+      <td> View:
+      </td>
+      <td>
+        <select formControlName="view">
+          <option value="simple">Simple</option>
+          <option value="detailed">Detailed</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <button type="submit">Search</button>
+      </td>
+    </tr>
+  </table>
+
+</form>
+
+<div>
+  <img src="/assets/polar-bear.gif" alt="">
+</div>
+
+
+<ul>
+  <li *ngFor="let c of customers"
+    [routerLink]="['/customer', c.custId ]"
+    [queryParams]="{ view: c.view }"
+  >
+    <code>{{ c.custId }}</code>
+
+  </li>
+</ul>

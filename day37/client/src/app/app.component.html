@@ -1,0 +1,15 @@
+<h1>Client Side Routing</h1>
+
+<div>
+  <span [routerLink]="['/']"> Home </span>
+  <span>
+    <a [routerLink]="['/cat']">Cat</a>
+  </span>
+  <button type="button" [routerLink]="['/dog']">Dog</button>
+  <button type="button" (click)="navigate('cat')" >Cat</button>
+  <button type="button" (click)="navigate('dog')" >Dog by TS</button>
+  <button type="button" (click)="navigate('about')" >About</button>
+
+</div>
+
+<router-outlet></router-outlet>
