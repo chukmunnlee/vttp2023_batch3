@@ -1,0 +1,19 @@
+<h1>Numbers</h1>
+
+<table>
+  <tr>
+    <td width="40%">
+      <app-add-number (onNumber)="newNumber($event)">
+        <button type="button" (click)="clearForm()">Clear</button>
+        <button type="submit">My Add</button>
+      </app-add-number>
+      <!-- <app-add-number></app-add-number> -->
+    </td>
+    <td>
+      <app-list-number [value]="value" [name]="'fred'"></app-list-number>
+      <!-- <app-list-number></app-list-number> -->
+    </td>
+  </tr>
+</table>
+
+<router-outlet></router-outlet>

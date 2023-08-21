@@ -1,5 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Order } from '../models';
 
 @Component({
@@ -27,9 +27,9 @@ export class CreateOrderComponent implements OnInit {
   addLineItem() {
     this.lineItemsArray.push(
       this.fb.group({
-        name: this.fb.control<string>(''),
-        quantity: this.fb.control<number>(1),
-        unitPrice: this.fb.control<number>(.5),
+        name: this.fb.control<string>('', [ Validators.required ]),
+        quantity: this.fb.control<number>(1, [ Validators.required, Validators.min(1) ]),
+        unitPrice: this.fb.control<number>(.5, [ Validators.required, Validators.min(.05) ]),
       })
     )
   }
@@ -38,11 +38,16 @@ export class CreateOrderComponent implements OnInit {
     this.lineItemsArray.removeAt(idx)
   }
 
+  invalid(): boolean {
+    //console.info('>>> ', this.orderForm.invalid || this.lineItemsArray.controls.length <= 0)
+    return this.orderForm.invalid || this.lineItemsArray.controls.length <= 0
+  }
+
   private createOrder() {
     this.lineItemsArray = this.fb.array([])
     return this.fb.group({
-      name: this.fb.control<string>(''),
-      email: this.fb.control<string>(''),
+      name: this.fb.control<string>('', [ Validators.required, Validators.minLength(3) ]),
+      email: this.fb.control<string>('', [ Validators.required, Validators.email ]),
       express: this.fb.control<boolean>(false),
       lineItems: this.lineItemsArray
     })

@@ -1,0 +1,8 @@
+<h2>Add Number</h2>
+
+<form [formGroup]="numForm" (submit)="processForm()">
+  Number:
+  <input type="number" size="30" formControlName="num">
+  <ng-content></ng-content>
+  <!-- <button type="submit">Add</button> -->
+</form>
