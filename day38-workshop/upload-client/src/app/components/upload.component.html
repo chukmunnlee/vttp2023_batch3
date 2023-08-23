@@ -1,0 +1,26 @@
+<h2>File Upload</h2>
+
+<table>
+  <tr>
+    <td>Audio file:</td>
+    <td>
+      <input type="file" placeholder="Audio File" accept="audio/*" #audio>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+      <button type="button" (click)="process()">
+        Play It!
+      </button>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+      <span *ngIf="!!audioFile">
+        Uploading {{ audioFile }}
+      </span>
+    </td>
+  </tr>
+</table>

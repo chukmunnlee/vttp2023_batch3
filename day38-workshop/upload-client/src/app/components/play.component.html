@@ -1,0 +1,15 @@
+<h2>Playing {{ song }} </h2>
+
+<div *ngIf="songUrl; else loading">
+  <audio controls autoplay>
+    <source [src]="songUrl">
+  </audio>
+</div>
+
+<button type="button" [routerLink]="['/']">
+  Back
+</button>
+
+<ng-template #loading>
+  <h3>Loading</h3>
+</ng-template>
