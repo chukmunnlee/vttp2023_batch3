@@ -1,0 +1,16 @@
+<h1>Upload</h1>
+
+<form [formGroup]="uploadForm" (submit)="processForm()">
+
+  <div>
+    Description: <input type="text" name="" formControlName="description">
+  </div>
+
+  <div>
+    File: <input type="file" #toUpload>
+  </div>
+
+  <div>
+    <button type="submit">Submit</button>
+  </div>
+</form>

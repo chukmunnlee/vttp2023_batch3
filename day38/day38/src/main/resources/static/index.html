@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+	</head>
+	<body>
+
+		<h2>File Upload</h2>
+
+		<form method="POST" action="/upload" enctype="multipart/form-data">
+			<table>
+				<tr>
+					<td>Description:</td>
+					<td>
+						<textarea name="description" cols="30" rows="5"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td>Upload:</td>
+					<td>
+						<input type="file" name="myfile">
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						<button type="submit">Upload</button>
+					</td>
+				</tr>
+			</table>
+		</form>
+		
+	</body>
+</html>
