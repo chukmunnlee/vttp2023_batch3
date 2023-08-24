@@ -1,0 +1,26 @@
+.card {
+  width: auto;
+  height: 20vh;
+}
+
+.side {
+  display: flex;
+  flex-direction: row;
+  gap: 5vw;
+}
+
+.spread {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.table {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  row-gap: 5vh;
+}
+
+.space-top {
+  margin: 10vh;
+}

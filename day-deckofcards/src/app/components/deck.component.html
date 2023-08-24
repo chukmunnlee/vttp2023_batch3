@@ -1,0 +1,31 @@
+<h1>Deck Id: <code>{{ deckId }}</code>  </h1>
+
+<div>
+  <div class="side">
+    <div>
+      <div>
+        <img src="https://www.deckofcardsapi.com/static/img/back.png" class="card"
+        (click)="drawCard()">
+      </div>
+      <div>
+        Remaining: {{ remaining }}
+      </div>
+    </div>
+    <div class="spread">
+      <strong>Select number of cards</strong>
+      <div>
+        <select (change)="onChange($event)">
+          <option *ngFor="let c of numCards" [value]="c">{{ c }}</option>
+        </select>
+      </div>
+      <div>
+        <button type="button" [routerLink]="['/']">Discard</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="table space-top" *ngIf="hand$ | async as d">
+  <img *ngFor="let c of d.cards" [src]="c.image" class="card">
+</div>
+
