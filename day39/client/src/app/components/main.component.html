@@ -1,0 +1,16 @@
+
+<h1>Main</h1>
+
+<h2><a [routerLink]="['/form']">Go to Form</a></h2>
+
+<form [formGroup]="form" (submit)="process()">
+  Load:
+  <input type="text" placeholder="Enter a valid ID" formControlName="userId">
+  <button type="submit">Get It</button>
+</form>
+
+<ul>
+  <li *ngFor="let u of users">
+    <a [routerLink]="['/form', u.userId]">{{ u.name | uppercase }}</a>
+  </li>
+</ul>

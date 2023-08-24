@@ -1,0 +1,29 @@
+
+<h2>Form</h2>
+
+<h3>Is Dirty: {{ form.dirty }}, Is Pristine: {{ form.pristine }}</h3>
+
+<form [formGroup]="form" (submit)="process()">
+  <table>
+    <tr>
+      <td>Name:</td>
+      <td>
+        <input type="text" placeholder="Your name" formControlName="name">
+      </td>
+    </tr>
+    <tr>
+      <td>Email:</td>
+      <td>
+        <input type="email" placeholder="Your email" formControlName="email">
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <button type="button" [routerLink]="['/']">Back</button>
+        <button type="submit" [disabled]="form.invalid">Add</button>
+      </td>
+    </tr>
+  </table>
+
+</form>
