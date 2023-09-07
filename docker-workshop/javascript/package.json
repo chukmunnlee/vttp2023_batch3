@@ -1,0 +1,21 @@
+{
+  "name": "dov-bear",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@opentelemetry/auto-instrumentations-node": "^0.38.0",
+    "@opentelemetry/exporter-prometheus": "^0.41.1",
+    "@opentelemetry/sdk-metrics": "^1.15.1",
+    "@opentelemetry/sdk-node": "^0.41.1",
+    "command-line-args": "^5.2.1",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.1.0",
+    "morgan": "^1.10.0"
+  }
+}
